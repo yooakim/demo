@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Basefarm.Demo.Web.Data;
 using Basefarm.Demo.Web.Entities;
 
-namespace Web.Pages.Disks
+namespace Basefarm.Demo.Web.Pages.Disks
 {
     public class EditModel : PageModel
     {
