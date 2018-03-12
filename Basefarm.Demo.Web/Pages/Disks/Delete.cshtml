@@ -1,0 +1,112 @@
+﻿@page
+@model Web.Pages.Disks.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>LogicalDisk</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.Name)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.Name)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.Description)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.Description)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.SystemName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.SystemName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.FreeSpace)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.FreeSpace)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.Size)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.Size)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.Compressed)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.Compressed)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.DriveType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.DriveType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.FileSystem)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.FileSystem)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.MaximumComponentLength)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.MaximumComponentLength)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.MediaType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.MediaType)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.SupportsDiskQuotas)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.SupportsDiskQuotas)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.SupportsFileBasedCompression)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.SupportsFileBasedCompression)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.VolumeDirty)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.VolumeDirty)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.VolumeName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.VolumeName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.LogicalDisk.VolumeSerialNumber)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.LogicalDisk.VolumeSerialNumber)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="LogicalDisk.Id" />
+        <input type="submit" value="Delete" class="btn btn-default" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

@@ -1,0 +1,112 @@
+﻿@page
+@model Web.Pages.Disks.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h2>Create</h2>
+
+<h4>LogicalDisk</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.Name" class="control-label"></label>
+                <input asp-for="LogicalDisk.Name" class="form-control" />
+                <span asp-validation-for="LogicalDisk.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.Description" class="control-label"></label>
+                <input asp-for="LogicalDisk.Description" class="form-control" />
+                <span asp-validation-for="LogicalDisk.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.SystemName" class="control-label"></label>
+                <input asp-for="LogicalDisk.SystemName" class="form-control" />
+                <span asp-validation-for="LogicalDisk.SystemName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.FreeSpace" class="control-label"></label>
+                <input asp-for="LogicalDisk.FreeSpace" class="form-control" />
+                <span asp-validation-for="LogicalDisk.FreeSpace" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.Size" class="control-label"></label>
+                <input asp-for="LogicalDisk.Size" class="form-control" />
+                <span asp-validation-for="LogicalDisk.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LogicalDisk.Compressed" /> @Html.DisplayNameFor(model => model.Compressed))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.DriveType" class="control-label"></label>
+                <input asp-for="LogicalDisk.DriveType" class="form-control" />
+                <span asp-validation-for="LogicalDisk.DriveType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.FileSystem" class="control-label"></label>
+                <input asp-for="LogicalDisk.FileSystem" class="form-control" />
+                <span asp-validation-for="LogicalDisk.FileSystem" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.MaximumComponentLength" class="control-label"></label>
+                <input asp-for="LogicalDisk.MaximumComponentLength" class="form-control" />
+                <span asp-validation-for="LogicalDisk.MaximumComponentLength" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.MediaType" class="control-label"></label>
+                <input asp-for="LogicalDisk.MediaType" class="form-control" />
+                <span asp-validation-for="LogicalDisk.MediaType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LogicalDisk.SupportsDiskQuotas" /> @Html.DisplayNameFor(model => model.SupportsDiskQuotas))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LogicalDisk.SupportsFileBasedCompression" /> @Html.DisplayNameFor(model => model.SupportsFileBasedCompression))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="checkbox">
+                    <label>
+                        <input asp-for="LogicalDisk.VolumeDirty" /> @Html.DisplayNameFor(model => model.VolumeDirty))
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.VolumeName" class="control-label"></label>
+                <input asp-for="LogicalDisk.VolumeName" class="form-control" />
+                <span asp-validation-for="LogicalDisk.VolumeName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LogicalDisk.VolumeSerialNumber" class="control-label"></label>
+                <input asp-for="LogicalDisk.VolumeSerialNumber" class="form-control" />
+                <span asp-validation-for="LogicalDisk.VolumeSerialNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
