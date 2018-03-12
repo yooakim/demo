@@ -11,7 +11,7 @@ namespace Basefarm.Demo.Web.Entities
         public bool Compressed { get; set; }
         public int DriveType { get; set; }
         public string FileSystem { get; set; }
-        public string MaximumComponentLength { get; set; }
+        public int MaximumComponentLength { get; set; }
         public int MediaType { get; set; }
         public bool SupportsDiskQuotas { get; set; }
         public bool SupportsFileBasedCompression { get; set; }

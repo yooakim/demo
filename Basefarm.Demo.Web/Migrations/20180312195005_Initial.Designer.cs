@@ -5,21 +5,19 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage;
-using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
 namespace Web.Migrations
 {
     [DbContext(typeof(DiskContext))]
-    [Migration("20180312125425_Initial")]
+    [Migration("20180312195005_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
 
             modelBuilder.Entity("Basefarm.Demo.Web.Entities.LogicalDisk", b =>
                 {
@@ -36,7 +34,7 @@ namespace Web.Migrations
 
                     b.Property<long>("FreeSpace");
 
-                    b.Property<string>("MaximumComponentLength");
+                    b.Property<int>("MaximumComponentLength");
 
                     b.Property<int>("MediaType");
 

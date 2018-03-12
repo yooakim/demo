@@ -12,14 +12,12 @@
     <thead>
         <tr>
             <th>
-                Name
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
                 Host
             </th>
+            <th>
+                Drive
+            </th>
+            <th>Used</th>
             <th>
                 Free
             </th>
@@ -41,37 +39,32 @@
     <tbody>
         @foreach (var item in Model.LogicalDisk)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.SystemName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FreeSpace)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Size)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FileSystem)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolumeName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.VolumeSerialNumber)
-                </td>
-                <td>
-                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SystemName)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td align="right">@(item.Used / 1073741824)</td>
+
+            <td align="right">@(item.FreeSpace / 1073741824)</td>
+            <td align="right">@(item.Size / 1073741824)</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FileSystem)
+            </td>
+            <td align="center">
+                @Html.DisplayFor(modelItem => item.VolumeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolumeSerialNumber)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 using System.Collections.Generic;
 
@@ -14,13 +13,13 @@ namespace Web.Migrations
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                        .Annotation("Sqlite:Autoincrement", true),
                     Compressed = table.Column<bool>(nullable: false),
                     Description = table.Column<string>(nullable: true),
                     DriveType = table.Column<int>(nullable: false),
                     FileSystem = table.Column<string>(nullable: true),
                     FreeSpace = table.Column<long>(nullable: false),
-                    MaximumComponentLength = table.Column<string>(nullable: true),
+                    MaximumComponentLength = table.Column<int>(nullable: false),
                     MediaType = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     Size = table.Column<long>(nullable: false),
