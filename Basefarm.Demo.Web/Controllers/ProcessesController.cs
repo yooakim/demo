@@ -27,13 +27,13 @@ namespace Web.Controllers
                   new
                   {
                       p.Id,
-                      p.MachineName,
                       p.ProcessName,
                       p.WorkingSet64,
                       Environment.WorkingSet,
                       Environment.ProcessorCount,
                       osNameAndVersion,
-                      Environment.Version
+                      Environment.Version,
+                      Environment.CommandLine
                   });
                 return result;
             }
@@ -57,6 +57,7 @@ namespace Web.Controllers
             {
                 return new {
                     process.Id,
+                    process.MachineName,
                     process.ProcessName,
                     process.WorkingSet64,
                     process.VirtualMemorySize64,
