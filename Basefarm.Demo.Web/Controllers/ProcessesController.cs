@@ -19,6 +19,7 @@ namespace Web.Controllers
 
             IEnumerable<Process> processes = Process.GetProcesses();
 
+            var osNameAndVersion = System.Runtime.InteropServices.RuntimeInformation.OSDescription;
 
             try
             {
@@ -28,19 +29,16 @@ namespace Web.Controllers
                       p.Id,
                       p.MachineName,
                       p.ProcessName,
-                      p.PagedMemorySize64,
-                      p.PagedSystemMemorySize64,
-                      p.PeakWorkingSet64,
-                      p.PrivateMemorySize64,
                       p.WorkingSet64,
-                      p.VirtualMemorySize64
-
+                      Environment.WorkingSet,
+                      Environment.ProcessorCount,
+                      osNameAndVersion,
+                      Environment.Version
                   });
                 return result;
             }
             catch (Exception e)
             {
-
                 throw new Exception("{0}",e.InnerException);
             }
 
@@ -49,27 +47,24 @@ namespace Web.Controllers
 
         // GET: api/Processes/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public dynamic Get(int id)
         {
-            return "value";
+            var process = Process.GetProcessById(id);
+            if(process == null)
+            {
+                return NotFound();
+            } else
+            {
+                return new {
+                    process.Id,
+                    process.ProcessName,
+                    process.WorkingSet64,
+                    process.VirtualMemorySize64,
+                    process.PrivateMemorySize64,
+                    Threads = process.Threads.Count
+                };
+            }
         }
 
-        // POST: api/Processes
-        [HttpPost]
-        public void Post([FromBody]string value)
-        {
-        }
-
-        // PUT: api/Processes/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-        }
     }
 }
