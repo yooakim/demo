@@ -1,6 +1,9 @@
 
 # Created by https://www.gitignore.io/api/visualstudiocode,visualstudio
 
+### do not checkin the demo.db as this is generated when project runs
+demo.db
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
