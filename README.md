@@ -9,6 +9,9 @@ This is our _go-to_ demo Web App app built on the recent Microsoft technologoy s
 * .NET Framework Core
 * [Razor Pages](https://docs.microsoft.com/en-us/aspnet/core/mvc/razor-pages/index?tabs=visual-studio) - is a new feature of ASP.NET Core MVC that makes coding page-focused scenarios easier and more productive.
  
+## Deploying the app
+
+More information about how to deploy can be found [here](./docs/HOWTO-Deploy.cmd)
 
 ## Content
 

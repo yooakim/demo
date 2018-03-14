@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Basefarm.Demo.Web.Data;
 using Basefarm.Demo.Web.Entities;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -25,6 +26,12 @@ namespace Basefarm.Demo.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // https://octopus.com/docs/deploying-applications/deploying-asp.net-core-web-applications
+            services.AddAntiforgery(opts => opts.Cookie.Name = "AntiForgery.Demo");
+            services.AddDataProtection().SetApplicationName("Basefarm Demo Web");
+
+
             services.AddDbContext<DiskContext>(opt => opt.UseSqlite("Data Source = demo.db"));
             services.AddMvc();
 
@@ -222,7 +229,7 @@ namespace Basefarm.Demo.Web
                             VolumeSerialNumber = "6F5EBF16"
                         }
                     );
-                dbContext.SaveChanges();
+                    dbContext.SaveChanges();
 
                 }
 
