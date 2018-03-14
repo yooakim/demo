@@ -1,6 +1,11 @@
 
 # Created by https://www.gitignore.io/api/visualstudiocode,visualstudio
 
+# Do not stor our packaged application zip files
+
+**/packaged/*
+**/published/*
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json

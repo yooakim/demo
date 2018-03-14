@@ -16,6 +16,10 @@ Once the project have been built ok it's time to pack it up for deployment via O
 octo pack --id Basefarm.Demo.Web --basePath .\Basefarm.Demo.Web\published --format=zip --outFolder=.\packaged
 ```
 
+```powershell
+octo push --server=https://bfoctopus.northeurope.cloudapp.azure.com  --apiKey=<YOUR API KEY> --ignoreSslErrors --package=.\packaged\Basefarm.Demo.Web.2018.3.14.124645.zip
+```
+
 
 ## Setting up IIS
 
