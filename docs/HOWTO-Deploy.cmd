@@ -8,12 +8,12 @@ packaged into a NuGet or Zip file. Here you can find out how to do that.
 Change location to the projects home folder. Then build the project for release:
 
 ```powershell
-dotnet publish Basefarm.Demo.Web --output .\published --configuration Release
+dotnet publish Basefarm.Demo.Web --configuration Release
 ```
 Once the project have been built ok it's time to pack it up for deployment via Octopus:
 
 ```powershell
-octo pack --id Basefarm.Demo.Web --basePath .\Basefarm.Demo.Web\published --format=zip --outFolder=.\packaged
+octo pack --id Basefarm.Demo.Web --basePath .\Basefarm.Demo.Web\bin\Release\netcoreapp2.0\publish --format=zip --outFolder=.\packaged
 ```
 
 ```powershell
