@@ -1,0 +1,44 @@
+﻿@page
+@model dynamic
+<h2>Processes</h2>
+
+<link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" type="text/css" />
+
+<table class="table table-striped table-bordered" id="processes" style="width:100%">
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>processName</th>
+            <th>workingSet64</th>
+            <th>workingSet</th>
+            <th>commandLine</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+
+
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-1.12.4.js "></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#processes').DataTable({
+                "ajax": {
+                    "url": "/api/processes",
+                    "dataSrc": ""
+                },
+                "columns": [
+                    { "data": "id" },
+                    { "data": "processName" },
+                    { "data": "workingSet64" },
+                    { "data": "workingSet" },
+                    { "data": "commandLine" }
+                ]
+            });
+        });
+    </script>
+
+}

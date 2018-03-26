@@ -13,53 +13,17 @@ namespace Web.Controllers
     [Route("api/DoWork")]
     public class DoWorkController : Controller
     {
-        // GET: api/DoWork
-        [HttpGet]
-        public dynamic Get()
-        {
-            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            //IPAddress ipAddress = ipHostInfo.AddressList[0];
 
-            return new 
-            {
-                ipHostInfo.HostName
-
-            };
-        }
-
-        // GET: api/DoWork/5
-        [HttpGet("{id}")]
-        public string Get(int id)
-        {
-            return $"value {id}";
-        }
 
         // POST: api/DoWork
         [HttpPost]
-        public async void PostAsync([FromBody] int duration)
+        public async void PostAsync([FromBody] int duration = 20)
         {
             Stopwatch watch = new Stopwatch();
             watch.Start();
             await Task.Run(() => CpuIntensiveMulti(duration));
             watch.Stop();
 
-        }
-
-
-        public async Task<ActionResult> DoWorkAsync(int duration = 20)
-        {
-            Stopwatch watch = new Stopwatch();
-            watch.Start();
-            await Task.Run(() => CpuIntensiveMulti(duration));
-
-            return RedirectToAction("Index");
-        }
-        public static string GetIPAddress()
-        {
-            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
-
-            return ipAddress.ToString();
         }
 
         void CpuIntensiveMulti(int duration = 10)
@@ -78,16 +42,5 @@ namespace Web.Controllers
                 .ToList(); // ToList makes the query execute.
         }
 
-        void CpuIntensive()
-        {
-            var startDt = DateTime.Now;
-
-            while (true)
-            {
-                if ((DateTime.Now - startDt).TotalSeconds >= 10)
-                    break;
-            }
-
-        }
     }
 }
