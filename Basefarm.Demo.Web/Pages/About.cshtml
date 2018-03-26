@@ -1,9 +1,37 @@
 ﻿@page
 @model AboutModel
-@{
-    ViewData["Title"] = "About";
-}
-<h2>@ViewData["Title"]</h2>
-<h3>@Model.Message</h3>
+@using System.Text;
 
-<p>Use this area to provide additional information.</p>
+<h2>About</h2>
+
+@{
+    var os = Environment.OSVersion;
+
+}
+
+<h3>Current OS Information:</h3>
+<table>
+    <tr>
+        <td>Platform:</td>
+        <td>@string.Format("{0:G}", os.Platform)</td>
+    </tr>
+    <tr>
+        <td>Version String:</td>
+        <td>@string.Format("{0}", os.VersionString)</td>
+    </tr>
+    <tr>
+        <td colspan="2">Version Information:</td>
+    </tr>
+    <tr>
+        <td>Major:</td>
+        <td>@string.Format("{0}", os.Version.Major)</td>
+    </tr>
+    <tr>
+        <td>Minor:</td>
+        <td>@string.Format("{0}", os.Version.Minor)</td>
+    </tr>
+    <tr>
+        <td>Service Pack:</td>
+        <td>@string.Format("{0}", os.ServicePack)</td>
+    </tr>
+</table>
