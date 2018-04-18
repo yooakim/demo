@@ -28,8 +28,16 @@ namespace Web.Controllers
 
         void CpuIntensiveMulti(int duration = 10)
         {
+            int pRange;
+            if (Environment.ProcessorCount == 1)
+            {
+                pRange = 1;
+            } else
+            {
+                pRange = Environment.ProcessorCount - 1;
+            }
             Enumerable
-                .Range(1, Environment.ProcessorCount - 1) // replace with lesser number if 100% usage is not what you are after.
+                .Range(1, pRange) // replace with lesser number if 100% usage is not what you are after.
                 .AsParallel()
                 .Select(i =>
                 {
