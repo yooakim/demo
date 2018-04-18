@@ -6,6 +6,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Basefarm.Demo.Web\We
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E0FBB8E9-2F2B-417E-A29C-8C107881347B}"
 	ProjectSection(SolutionItems) = preProject
+		images\Capture-Dashboard.PNG = images\Capture-Dashboard.PNG
+		images\Capture-Disks.PNG = images\Capture-Disks.PNG
+		images\Capture-processes.PNG = images\Capture-processes.PNG
+		images\Capture-SwaggerUI.PNG = images\Capture-SwaggerUI.PNG
 		docs\PS-API-DEMO.md = docs\PS-API-DEMO.md
 		README.md = README.md
 	EndProjectSection
