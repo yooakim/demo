@@ -11,7 +11,9 @@ This is our _go-to_ demo Web App app built on the recent Microsoft technologoy s
  
 ## Deploying the app
 
-More information about how to deploy can be found [here](./docs/HOWTO-Deploy.cmd)
+As this app is built using [.NET Core](https://www.microsoft.com/net/) it can run on all plattforms the [.NET Core runtime supports](https://www.microsoft.com/net/download/all).
+
+More information about how to deploy can be found [here](./docs/HOWTO-Deploy.md)
 
 ## Content
 
