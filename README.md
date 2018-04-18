@@ -1,4 +1,4 @@
-![Basefarm logotype](./Basefarm.Demo.Web/wwwroot/images/baselogo_1_slogan_blue.png)
+![Basefarm logotype](./Basefarm.Demo.Web/wwwroot/images/baselogo_1_slogan_blue.png "Basefarm Logotype")
 
 
 # Demo Web 
@@ -17,6 +17,12 @@ More information about how to deploy can be found [here](./docs/HOWTO-Deploy.cmd
 
 * [PowerShell REST API demo](./docs/PS-API-DEMO.md)
 
+## Screen shots
+
+![Dashboard](./images/Capture-Dashboard.png "Dashboard")
+![Processes](./images/Capture-Processes.png "Processes")
+![Disks](./images/Capture-Processes.png "Disks")
+![REST API](./images/Capture-Processes.png "REST API / Swagger UI")
 
 ### Issues
 
