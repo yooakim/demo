@@ -19,10 +19,10 @@ More information about how to deploy can be found [here](./docs/HOWTO-Deploy.cmd
 
 ## Screen shots
 
-![Dashboard](/images/Capture-Dashboard.png "Dashboard")
-![Processes](./images/Capture-Processes.png "Processes")
-![Disks](./images/Capture-Processes.png "Disks")
-![REST API](./images/Capture-Processes.png "REST API / Swagger UI")
+![Dashboard](images/Capture-Dashboard.png "Dashboard")
+![Processes](./images/Capture-processes.png "Processes")
+![Disks](./images/Capture-Disks.png "Disks")
+![REST API](./images/Capture-SwaggerUI.png "REST API / Swagger UI")
 
 ### Issues
 
