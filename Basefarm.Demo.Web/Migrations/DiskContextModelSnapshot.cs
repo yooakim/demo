@@ -16,7 +16,7 @@ namespace Web.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.1-rtm-125");
+                .HasAnnotation("ProductVersion", "2.0.2-rtm-10011");
 
             modelBuilder.Entity("Basefarm.Demo.Web.Entities.LogicalDisk", b =>
                 {
@@ -56,6 +56,26 @@ namespace Web.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("LogicalDisks");
+                });
+
+            modelBuilder.Entity("Basefarm.Demo.Web.Entities.PSDrive", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<long>("Free");
+
+                    b.Property<string>("HostName");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Root");
+
+                    b.Property<long>("Used");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PSDrives");
                 });
 #pragma warning restore 612, 618
         }
