@@ -8,6 +8,11 @@ namespace Basefarm.Demo.Web.Data
         {
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            
+        }
+
         public DbSet<LogicalDisk> LogicalDisks { get; set; }
         public DbSet<PSDrive> PSDrives { get; set; }
 
