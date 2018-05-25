@@ -10,14 +10,14 @@ using System;
 namespace Web.Migrations
 {
     [DbContext(typeof(DiskContext))]
-    [Migration("20180328063155_Initial")]
+    [Migration("20180514061500_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "2.0.2-rtm-10011");
+                .HasAnnotation("ProductVersion", "2.0.3-rtm-10026");
 
             modelBuilder.Entity("Basefarm.Demo.Web.Entities.LogicalDisk", b =>
                 {
