@@ -6,16 +6,19 @@
 
 <div class="jumbotron transp sysinfo-box">
     <table>
-        <tr><td><span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>&nbsp; Container:</td><td>Running as a @Model.container</td></tr>
-        <tr><td><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp; Hostname:</td><td>@Model.host</td></tr>
-        <tr><td><span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;  IP Address:</td><td>@Model.ip</td></tr>
-        <tr><td><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>&nbsp;  Operating system:</td><td>@Model.os</td></tr>
-        <tr><td><span class="glyphicon glyphicon-flash" aria-hidden="true"></span>&nbsp;  Processors:</td><td>@Model.procs (@Model.arch)</td></tr>
-        <tr><td><span class="glyphicon glyphicon-equalizer" aria-hidden="true"></span>&nbsp;  Memory:</td><td>@Model.mem GB (estimate, probably wrong!)</td></tr>
-        <tr><td><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span>&nbsp;  Framework:</td><td>@Model.framework</td></tr>
+        <tr><td><span class="fab fa-docker" aria-hidden="true"></span>&nbsp; Container:</td><td>Running as a @Model.container</td></tr>
+        <tr><td><span class="fas fa-laptop" aria-hidden="true"></span>&nbsp; Hostname:</td><td>@Model.host</td></tr>
+        <tr><td><span class="fas fa-globe" aria-hidden="true"></span>&nbsp;  IP Address:</td><td>@Model.ip</td></tr>
+        <tr><td><span class="fas fa-eye" aria-hidden="true"></span>&nbsp;  Operating system:</td><td>@Model.os</td></tr>
+        <tr><td><span class="fas fa-microchip" aria-hidden="true"></span>&nbsp;  Processors:</td><td>@Model.procs (@Model.arch)</td></tr>
+        <tr><td><span class="fas fa-memory" aria-hidden="true"></span>&nbsp;  Memory:</td><td>@Model.mem GB (estimate, probably wrong!)</td></tr>
+        <tr><td><span class="fas fa-folder-open" aria-hidden="true"></span>&nbsp;  Framework:</td><td>@Model.framework</td></tr>
+        <tr><td><span class="fas fa-code-branch" aria-hidden="true"></span>&nbsp;  Version:</td><td>@System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;</td></tr>
+
         @foreach (var key in Model.envs.Keys)
         {
             <tr><td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;  @key:</td><td>@Model.envs[key]</td></tr>
         }
+
     </table>
 </div>

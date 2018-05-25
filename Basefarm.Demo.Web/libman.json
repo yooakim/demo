@@ -1,0 +1,29 @@
+﻿{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "defaultDestination": "wwwroot/lib",
+  "libraries": [
+    {
+      "library": "jquery@3.3.1",
+      "files": [ "jquery.slim.min.js", "jquery.js" ],
+      "destination": "wwwroot/lib/jquery/dist/"
+    },
+    {
+      "library": "twitter-bootstrap@4.1.1",
+      "files": [ "css/bootstrap.min.css", "css/bootstrap.css", "js/bootstrap.js", "js/bootstrap.min.js", "css/bootstrap.css.map" ],
+      "destination": "wwwroot/lib/bootstrap/dist"
+    },
+    {
+      "library": "popper.js@1.14.3",
+      "files": [ "umd/popper.min.js" ],
+      "destination": "wwwroot/lib/popper"
+    },
+    {
+      "library": "jQuery-Validation-Engine@2.6.4",
+      "destination": "wwwroot/lib/jquery-validation/dist"
+
+
+    }
+  ]
+
+}
