@@ -32,7 +32,7 @@ namespace Basefarm.Demo.Web
             services.AddDataProtection().SetApplicationName("Basefarm Demo Web");
 
 
-            services.AddDbContext<DiskContext>(opt => opt.UseSqlite("Data Source = demo.db"));
+            services.AddDbContext<DiskContext>(opt => opt.UseInMemoryDatabase("DemoDB"));
             services.AddMvc();
 
             // Register the Swagger generator, defining one or more Swagger documents
