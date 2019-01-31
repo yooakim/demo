@@ -2,36 +2,23 @@
 @model AboutModel
 @using System.Text;
 
-<h2>About</h2>
+<h2>System Info</h2>
 
-@{
-    var os = Environment.OSVersion;
+<div class="jumbotron transp sysinfo-box">
+    <table>
+        <tr><td><span class="fab fa-docker" aria-hidden="true"></span>&nbsp; Container:</td><td>Running as a @Model.container</td></tr>
+        <tr><td><span class="fas fa-laptop" aria-hidden="true"></span>&nbsp; Hostname:</td><td>@Model.host</td></tr>
+        <tr><td><span class="fas fa-globe" aria-hidden="true"></span>&nbsp;  IP Address:</td><td>@Model.ip</td></tr>
+        <tr><td><span class="fas fa-eye" aria-hidden="true"></span>&nbsp;  Operating system:</td><td>@Model.os</td></tr>
+        <tr><td><span class="fas fa-microchip" aria-hidden="true"></span>&nbsp;  Processors:</td><td>@Model.procs (@Model.arch)</td></tr>
+        <tr><td><span class="fas fa-memory" aria-hidden="true"></span>&nbsp;  Memory:</td><td>@Model.mem GB (estimate, probably wrong!)</td></tr>
+        <tr><td><span class="fas fa-folder-open" aria-hidden="true"></span>&nbsp;  Framework:</td><td>@Model.framework</td></tr>
+        <tr><td><span class="fas fa-code-branch" aria-hidden="true"></span>&nbsp;  Version:</td><td>@System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;</td></tr>
 
-}
+        @foreach (var key in Model.envs.Keys)
+        {
+            <tr><td><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;  @key:</td><td>@Model.envs[key]</td></tr>
+        }
 
-<h3>Current OS Information:</h3>
-<table>
-    <tr>
-        <td>Platform:</td>
-        <td>@string.Format("{0:G}", os.Platform)</td>
-    </tr>
-    <tr>
-        <td>Version String:</td>
-        <td>@string.Format("{0}", os.VersionString)</td>
-    </tr>
-    <tr>
-        <td colspan="2">Version Information:</td>
-    </tr>
-    <tr>
-        <td>Major:</td>
-        <td>@string.Format("{0}", os.Version.Major)</td>
-    </tr>
-    <tr>
-        <td>Minor:</td>
-        <td>@string.Format("{0}", os.Version.Minor)</td>
-    </tr>
-    <tr>
-        <td>Service Pack:</td>
-        <td>@string.Format("{0}", os.ServicePack)</td>
-    </tr>
-</table>
+    </table>
+</div>
