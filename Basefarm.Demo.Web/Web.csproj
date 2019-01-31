@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
+    <RuntimeIdentifiers>win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
     <ApplicationInsightsResourceId>/subscriptions/91bf3c3f-ad47-419a-be3f-4330488b0a3c/resourcegroups/bf-demo-app/providers/microsoft.insights/components/bf-demo-app</ApplicationInsightsResourceId>
     <ApplicationInsightsAnnotationResourceId>/subscriptions/91bf3c3f-ad47-419a-be3f-4330488b0a3c/resourcegroups/bf-demo-app/providers/microsoft.insights/components/bf-demo-app</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>

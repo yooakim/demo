@@ -1,6 +1,6 @@
 
 
-dotnet publish Basefarm.Demo.Web --configuration Release
+dotnet publish Basefarm.Demo.Web --configuration Release  --runtime win-x64
 octo pack --id Basefarm.Demo.Web --basePath .\Basefarm.Demo.Web\bin\Release\netcoreapp2.0\publish --format=zip --outFolder=.\packaged
 
 # Find out the name of the most recent file
