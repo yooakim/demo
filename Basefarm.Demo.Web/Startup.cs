@@ -56,7 +56,7 @@ namespace Basefarm.Demo.Web
                 app.UseExceptionHandler("/Error");
             }
 
-            InitializeMigrations(app,true);
+            InitializeMigrations(app,false);
 
             app.UseStaticFiles();
 

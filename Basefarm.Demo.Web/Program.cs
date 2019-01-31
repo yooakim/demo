@@ -19,7 +19,7 @@ namespace Basefarm.Demo.Web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseApplicationInsights()
+                //.UseApplicationInsights()
                 .UseStartup<Startup>()
                 .Build();
     }
